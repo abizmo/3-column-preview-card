@@ -1,0 +1,17 @@
+/.pnp
+/build
+/coverage
+/node_modules
+.DS_Store
+.env.development.local
+.env.local
+.env.test.local
+.env.production.local
+.pnp.js
+.prettierignore
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sketch
+*.fig
+*.xd
