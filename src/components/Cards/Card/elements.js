@@ -22,11 +22,16 @@ export const Button = styled.button.attrs({
 `;
 
 export const Container = styled.div`
+  max-width: 327px;
   padding: 48px;
 
   &:first-child{
     background-color: ${theme.colors.orange}; 
     border-radius: 8px 8px 0 0;
+
+    @media(min-width: 1440px) {
+      border-radius: 8px 0 0 8px;
+    }
 
     & button {
       color: ${theme.colors.orange}; 
@@ -44,6 +49,10 @@ export const Container = styled.div`
   &:last-child{
     background-color: ${theme.colors.darkCyan}; 
     border-radius: 0 0 8px 8px;
+
+    @media(min-width: 1440px) {
+      border-radius: 0 8px 8px 0;
+    }
 
     & button {
       color: ${theme.colors.darkCyan}; 
