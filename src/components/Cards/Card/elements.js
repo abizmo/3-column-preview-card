@@ -14,11 +14,17 @@ export const Button = styled.button.attrs({
   type: 'button',
 })`
   background-color: ${theme.colors.gray};
-  border: none;
+  border: 2px solid ${theme.colors.gray};
   border-radius: 32px;
   font-family: 'Lexend Deca';
   text-transform: capitalize;
   padding: 16px 32px;
+
+  &:hover {
+    background-color: transparent;
+    color: ${theme.colors.gray}!important;
+    cursor: pointer;
+  }
 `;
 
 export const Container = styled.div`
