@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin: 24px 0;
   max-width: 920px;
 
-  @media(min-width: 1440px) {
+  @media(min-width: ${({ theme }) => theme.breakpoint.desktop}) {
     grid-template-columns: repeat(3, 1fr);
   }
 `;

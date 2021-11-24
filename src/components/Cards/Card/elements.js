@@ -1,80 +1,76 @@
-import styled from 'styled-components';
-
-const theme = {
-  colors: {
-    orange: 'hsl(31, 77%, 52%)',
-    cyan: 'hsl(184, 100%, 22%)',
-    darkCyan: 'hsl(179, 100%, 13%)',
-    white: 'hsla(0, 0%, 100%, 0.75)',
-    gray: 'hsl(0, 0%, 95%)',
-  },
-};
+import styled, { css } from 'styled-components';
 
 export const Button = styled.button.attrs({
   type: 'button',
 })`
-  background-color: ${theme.colors.gray};
-  border: 2px solid ${theme.colors.gray};
-  border-radius: 32px;
-  font-family: 'Lexend Deca';
-  text-transform: capitalize;
-  padding: 16px 32px;
+  ${({ theme }) => css`
+    background-color: ${theme.colors.neutral.gray};
+    border: 2px solid ${theme.colors.neutral.gray};
+    border-radius: 32px;
+    font-family: ${theme.typography.family.sansSerif};
+    text-transform: capitalize;
+    padding: 16px 32px;
 
-  &:hover {
-    background-color: transparent;
-    color: ${theme.colors.gray}!important;
-    cursor: pointer;
-  }
+    &:hover {
+      background-color: transparent;
+      color: ${theme.colors.neutral.gray}!important;
+      cursor: pointer;
+    }
+  `}
 `;
 
 export const Container = styled.div`
+${({ theme }) => css`
   max-width: 327px;
   padding: 48px;
 
   &:first-child{
-    background-color: ${theme.colors.orange}; 
+    background-color: ${theme.colors.primary.orange}; 
     border-radius: 8px 8px 0 0;
 
-    @media(min-width: 1440px) {
+    @media(min-width: ${theme.breakpoint.desktop}) {
       border-radius: 8px 0 0 8px;
     }
 
     & button {
-      color: ${theme.colors.orange}; 
+      color: ${theme.colors.primary.orange}; 
     }
   }
 
   &:nth-child(2){
-    background-color: ${theme.colors.cyan}; 
+    background-color: ${theme.colors.primary.cyan}; 
 
     & button {
-      color: ${theme.colors.cyan}; 
+      color: ${theme.colors.primary.cyan}; 
     }
   }
 
   &:last-child{
-    background-color: ${theme.colors.darkCyan}; 
+    background-color: ${theme.colors.primary.darkCyan}; 
     border-radius: 0 0 8px 8px;
 
-    @media(min-width: 1440px) {
+    @media(min-width: ${theme.breakpoint.desktop}) {
       border-radius: 0 8px 8px 0;
     }
 
     & button {
-      color: ${theme.colors.darkCyan}; 
+      color: ${theme.colors.primary.darkCyan}; 
     }
   }
+  `}
 `;
 
 export const Title = styled.h1`
-  color: ${theme.colors.gray};
-  font-family: 'Big Shoulders Display';
-  margin: 40px 0;
-  text-transform: uppercase;
+  ${({ theme }) => css`
+    color: ${theme.colors.neutral.gray};
+    font-family: ${theme.typography.family.display};
+    margin: 40px 0;
+    text-transform: uppercase;
+  `}
 `;
 
 export const Text = styled.p`
-  color: ${theme.colors.white};
+  color: ${({ theme }) => theme.colors.neutral.white};
   line-height: 24px;
   margin: 0 0 28px
 `;
